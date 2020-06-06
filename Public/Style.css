@@ -1,0 +1,93 @@
+
+
+h2{
+    color: #00BCD4;
+}
+
+.container{
+    margin-top: 4em !important;
+    margin-bottom:4em !important;
+}
+
+.btn{
+    margin: 2em;
+}
+
+.logout{
+    color: #FFFFFF;
+    margin-left:-0.1em;
+}
+
+.logout:hover{
+    color: #FFFFFF;
+}
+
+.listing .btn{
+    margin: auto;
+}
+
+.listingdetails .btn{
+    margin: auto;
+}
+.contact .btn{
+    margin: auto;
+}
+
+.title{
+    width: 100%;
+    text-align: center;
+    margin:  0 auto;
+}
+
+.title span{
+    font-size:2em;
+}
+
+.container-fluid{
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+
+/* dashboard */
+
+.Couples, .Families, .Kitchens{
+    text-align: center;
+}
+.Couples img{
+    border-radius: 50%;
+}
+.Families img{
+    border-radius: 50%;
+}
+.Kitchens img{
+    border-radius: 50%;
+}
+
+.card{
+    border: 0px !important;
+}
+
+.card-title{
+    margin-bottom:2em;
+}
+
+/* listigs */
+
+.top-title{
+    font-size: 1.6em;
+    color: #00BCD4;
+    margin-bottom: 0.5em;
+}
+
+.bottom-title{
+    font-size: 1.6em;
+    color: #000;
+    margin-bottom: 0.5em;
+}
+
+/* Listings Details */
+
+.description {
+    margin-top: 2em;
+    font-size: 1.2em;
+}

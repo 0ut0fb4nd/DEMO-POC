@@ -6,11 +6,15 @@ const passport = require('passport')
 // User model
 const User = require('../models/User')
 
+// // Property model
+// const Property = require('../models/Property')
+
 //Login Page
 router.get('/login', (req,res) => res.render('login'))
 
 //Register Page
 router.get('/register', (req,res) => res.render('register'))
+
 
 // Register Handle
 router.post('/register', (req,res) => {
@@ -81,6 +85,16 @@ router.post('/register', (req,res) => {
 
 })
 
+
+
+// // Contact Us Handler
+// router.post('/contactus', (req,res) => {
+//     var property = new Property()
+//     property.contactName = req.body.contactName
+//     console.log(req.body.contactName)
+//     res.send('Test')
+// })
+
 // Login Handle
 router.post('/login', (req, res, next) => {
     passport.authenticate('local', {
@@ -96,6 +110,16 @@ router.get('/logout', (req, res) => {
     req.flash('success_msg', 'You are logged out')
     res.redirect('/users/login')
 })
+
+// // Admin Handler
+// router.post('/admin', (req,res) => {
+//     passport.authenticate('local', {
+//         successRedirect: '/admin',
+//         failureRedirect: '/users/login',
+//         failureMessage: 'You are not Authrozied',
+//         failureFlash: true
+//     })(req,res, next)
+// })
 
 // Export the routers
 module.exports = router

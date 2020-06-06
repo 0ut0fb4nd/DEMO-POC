@@ -4,8 +4,11 @@ const mongoose = require('mongoose')
 const flash = require('connect-flash')
 const session = require('express-session')
 const passport = require('passport')
+const bodyParser = require('body-parser')
 const formidableMiddleware = require('express-formidable');
 const app = express()
+
+
 
 // Passport Config
 require('./config/passport')(passport)
@@ -22,9 +25,11 @@ mongoose.connect(db, { useNewUrlParser: true, useUnifiedTopology: true})
 // EJS Middleware
 app.use(expressLayouts)
 app.set('view engine', 'ejs')
+app.use(express.static('Public'))
 
 //Body Parse
-app.use(express.urlencoded({extended: false}))
+app.use(bodyParser.urlencoded({extended: false}))
+app.use(bodyParser.json())
 
 // Express Session Middleware
 app.use(session({
@@ -50,6 +55,7 @@ app.use((req, res, next) => {
 
 //Routes
 app.use('/', require('./routes/index'))
+app.use('/contactus', require('./routes/index'))
 app.use('/users', require('./routes/users'))
 app.use('/admin', require('./admin'))
 

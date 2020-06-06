@@ -1,21 +1,65 @@
-<!DOCTYPE html>
-<html lang="en">
+<%- include ("partials/nav") %>
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+        <img src="banner1.jpg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="banner2.jpg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="banner3.jpg" class="d-block w-100" alt="...">
+    </div>
+  </div>
+</div>
 
-  <%- include ("partials/head") %>
+<div class="container title" >
+  <h2>
+    Your Real Estate Source
+  </h2>
+  <span>
+    We offer residential and commercial real estate services
+  </span>
+</div>
 
-    <body>
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <div class="card Couples" style="width: 18rem;">
+        <h5 class="card-title">Card title</h5>
+        <img src="card1.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm">
+      <div class="card Families" style="width: 18rem;">
+        <h5 class="card-title">Card title</h5>
+        <img src="card2.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm">
+      <div class="card Kitchens" style="width: 18rem;">
+        <h5 class="card-title">Card title</h5>
+        <img src="card3.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-      <%- include ("partials/nav") %>
-
-        <section name="jumbotron"  >
-            <div class="jumbotron text-center">
-                <h1>CodePrep.io Presents</h1>
-                <p>Using EJS templating with Node.js</p>
-            </div>
-        </section>
-
-        <%- include ("partials/3columns") %>
-
-    </body>
-
-</html>
+<div class="container title" >
+  <h2>
+    Talk to a Real Estate Specialist
+  </h2>
+  <span>
+    Let’s Get Started!
+  </span><br>
+  <a href="/listings" class="btn btn-primary" >Property Listings</a>
+</div>

@@ -1,4 +1,6 @@
-const ROLE = {
-    ADMIN: 'admin',
-    BASIC: 'basic'
-}
+const ROLES = {
+    Admin: 'Admin',
+    Customer: 'Customer'
+  }
+  
+  module.exports = { ROLES }
