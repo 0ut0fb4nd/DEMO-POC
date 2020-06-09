@@ -23,9 +23,31 @@ router.get('/listings-details', ensureAuthenticated, (req,res) => res.render('li
 router.get('/contactus', ensureAuthenticated, (req,res) => res.render('contactus')) 
 
 router.post('/contactus', ensureAuthenticated, (req,res) => {
-    let property = new Property()
-    property.contactName = req.body.contactName
-    console.log(req.body.contactName)
+    const { contactName, contactEmail, contactPhone} = req.body
+    let errors = []
+
+    // check required fields
+    if(!contactName || !contactEmail || !contactPhone ){
+        errors.push({ msg : 'Please fill in all fields' })
+    }
+
+    if(errors.length > 0){
+        res.render('contactus', {
+            errors,
+            contactName,
+            contactEmail,
+            contactPhone
+            
+        })
+        }  else {
+            const newProperty = new Property({
+                contactName,
+                contactEmail,
+                contactPhone
+            })
+            console.log(newProperty)
+            res.send('hello')
+    }
 })
 
 

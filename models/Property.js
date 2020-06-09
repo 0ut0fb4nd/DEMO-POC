@@ -18,7 +18,7 @@ const PropertySchema = new mongoose.Schema({
 
     contactTextArea: {
         type: String,
-        required: true
+        required: false
     },
 
     date: {

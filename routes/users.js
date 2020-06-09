@@ -7,7 +7,7 @@ const passport = require('passport')
 const User = require('../models/User')
 
 // // Property model
-// const Property = require('../models/Property')
+const Property = require('../models/Property')
 
 //Login Page
 router.get('/login', (req,res) => res.render('login'))
