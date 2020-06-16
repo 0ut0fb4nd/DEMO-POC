@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const { ensureAuthenticated } = require('../config/auth')
+const mongoose = require('mongoose')
 
 // User model
 const Property = require('../models/Property')
@@ -22,6 +23,10 @@ router.get('/listings-details', ensureAuthenticated, (req,res) => res.render('li
 //Contact Us
 router.get('/contactus', ensureAuthenticated, (req,res) => res.render('contactus')) 
 
+//Admin Dashboard
+router.get('/admin', ensureAuthenticated, (req,res) => res.render('admin'))
+
+// Contact Us handler
 router.post('/contactus', ensureAuthenticated, (req,res) => {
     const { contactName, contactEmail, contactPhone} = req.body
     let errors = []
@@ -41,12 +46,15 @@ router.post('/contactus', ensureAuthenticated, (req,res) => {
         })
         }  else {
             const newProperty = new Property({
-                contactName,
-                contactEmail,
-                contactPhone
+                contactName, contactEmail, contactPhone
             })
-            console.log(newProperty)
-            res.send('hello')
+            newProperty.save()
+                .then(property => {
+                    req.flash('success_msg', 'You data has been successfully submitted')
+                    res.redirect('/contactus')
+                })
+                .catch(err => console.log(err))
+                
     }
 })
 
